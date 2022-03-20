@@ -6,14 +6,11 @@ let generateRandomNumber= ()=>{
 let actualNumber = generateRandomNumber();
 
 const assignValueToElements = (value, cssClassName) => {
-    // document.getElementsByClassName(cssClassName)[0].innerHTML = value;
     document.querySelector('.'+ cssClassName).innerHTML = value;
 }
 
 let Score = parseInt(document.getElementsByClassName('score')[0].innerHTML);
-let HighestScore = parseInt(document.getElementsByClassName('highscore')[0].innerHTML); 
-// let message = document.getElementsByClassName('message')[0].innerHTML;
-// let actualNumberDiv;
+let HighestScore = parseInt(document.getElementsByClassName('highscore')[0].innerHTML);
 
 let EqualCheck = () =>{
     let numberEntered = parseInt(document.getElementById('number').value);
@@ -44,7 +41,6 @@ let EqualCheck = () =>{
     else{
         Score = Score - 1;
         assignValueToElements(Score,'score');
-        // actualNumber > numberEntered ? document.getElementsByClassName('message')[0].innerHTML = 'Too Low!' : document.getElementsByClassName('message')[0].innerHTML = 'Too High!';
         actualNumber > numberEntered ? assignValueToElements('Too Low!','message') : assignValueToElements('Too High!','message');
     }
 }
@@ -66,11 +62,3 @@ let playAgain = () =>{
 
 document.querySelector('.check').addEventListener('click', EqualCheck);
 document.querySelector('.again').addEventListener('click', playAgain);
-
-
-
-
-
-
-//Properties
-//Score, HighestScore, generateRandomNumberBetwn1-20
